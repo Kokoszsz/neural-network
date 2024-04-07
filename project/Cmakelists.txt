@@ -3,6 +3,17 @@ project(neural_net)
 set(CMAKE_CXX_STANDARD 17)
 
 # Add the directory containing json.hpp to the include directories
+
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/libraries")
 
-add_executable(neural_net "neural_net.cpp")
+
+set(SOURCES
+    src/neural_net.cpp
+    src/neuron.cpp
+    src/layer.cpp
+    src/net.cpp
+    src/cost_function.cpp
+)
+
+add_executable(neural_net ${SOURCES}) 
