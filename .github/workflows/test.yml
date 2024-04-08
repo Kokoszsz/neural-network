@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2  # Checkout your repository
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    - name: Set up CMake
-      uses: cmake/setup-cmake@v1  # Set up CMake
+    - name: Install CMake
+      run: sudo apt-get install -y cmake
 
     - name: Configure
       run: cmake -Bbuild
