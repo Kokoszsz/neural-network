@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.8)
 set(This NueralNetTest)
 
 set(Sources
+    testtest.cpp
     test_cost_function.cpp
 )
 
@@ -13,8 +14,11 @@ target_link_libraries(${This} PUBLIC
     neural_net
 )
 
-add_test(
-    NAME ${This}
-    COMMAND ${This}
-)
-
+# Add the tests
+foreach(test_src ${Sources})
+    get_filename_component(test_name ${test_src} NAME_WE)
+    add_test(
+        NAME ${test_name}
+        COMMAND ${This} --gtest_filter=${test_name}:*
+    )
+endforeach()

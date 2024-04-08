@@ -1,0 +1,26 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Checkout your repository
+
+    - name: Set up CMake
+      uses: cmake/action-setup@v1  # Set up CMake
+
+    - name: Configure
+      run: cmake -Bbuild
+
+    - name: Build
+      run: cmake --build build
+
+    - name: Run tests
+      run: ctest --test-dir build --output-on-failure

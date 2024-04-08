@@ -22,7 +22,7 @@ int main(){
     std::vector<std::vector<double>> targetVals;
 
     // Open the file
-    std::ifstream file("../training_data/XOR_Data.txt");
+    std::ifstream file("training_data/XOR_Data.txt");
     if (!file.is_open()) {
         std::cerr << "Error opening file!" << std::endl;
         return 1;
@@ -85,7 +85,7 @@ int main(){
     data["topology"] = topology;
 
     // Write the JSON data to a file
-    std::ofstream jsonFile("../data/network_data.json");
+    std::ofstream jsonFile("data/network_data.json");
     if (jsonFile.is_open()) {
         jsonFile << std::setw(4) << data << std::endl; // Pretty-print with indentation of 4 spaces
         jsonFile.close();
@@ -96,7 +96,7 @@ int main(){
     }
 
     // Run the Python script to visualize the neural network
-    int result = std::system("python ../py_scripts/draw.py");
+    int result = std::system("python py_scripts/draw.py");
     if (result != 0) {
         std::cerr << "Error running Python script!" << std::endl;
         return 1;

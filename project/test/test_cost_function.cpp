@@ -38,7 +38,3 @@ TEST_F(CostFunctionTest, CalculateMSE) {
     EXPECT_FALSE(error_message.empty()); // Check if an error message was printed
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

@@ -47,7 +47,7 @@ def draw_neural_net(ax, num_layers, layer_sizes):
     nx.draw(G, pos, ax=ax, node_size=500, node_color='lightblue', with_labels=False, arrows=True)
 
 def main():
-    json_data = read_json('../data/network_data.json')
+    json_data = read_json('data/network_data.json')
     topology = json_data['topology']
 
     network = NeuralNetwork(topology)
