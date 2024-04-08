@@ -48,13 +48,14 @@ void Neuron::calcOutputGradients(double targetVal){
 }
 
 
-// Transfer function (set function to be what your outputs should be now it is tanh [-1.0, 1.0])
+// Transfer function (sigmoid function)
 double Neuron::transferFunction(double x){
-    return tanh(x);
+    return 1 / (1 + exp(-x));
 }
 
+// Transfer function derivative
 double Neuron::transferFunctionDerivative(double x){
-    return 1.0 - x * x;
+    return x * (1 - x);
 }
 
 void Neuron::feedForward(const Layer &prevLayer){

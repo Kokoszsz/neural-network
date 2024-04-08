@@ -3,9 +3,9 @@
         {
             "name": "Win32",
             "includePath": [
-                "${default}",
                 "${workspaceFolder}/libraries",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/googletest/googletest/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -16,7 +16,16 @@
             "compilerPath": "cl.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "windows-msvc-x64",
+            "mergeConfigurations": false,
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/libraries",
+                    "${workspaceFolder}/include",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
         }
     ],
     "version": 4

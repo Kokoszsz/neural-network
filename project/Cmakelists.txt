@@ -1,19 +1,32 @@
-cmake_minimum_required(VERSION 3.13)
-project(neural_net)
+# CMakeLists.txt
+
+# Set the minimum required version of CMake
+cmake_minimum_required(VERSION 3.14)
+
+set(This neural_net)
+
+project(${This} C CXX)
+
+include(cmake/UpdateSubmodules.cmake)
+
+# Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
 
-# Add the directory containing json.hpp to the include directories
+enable_testing()
 
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/libraries")
+add_subdirectory(googletest)
 
+# Include directories for header files
+include_directories(include libraries)
 
-set(SOURCES
-    src/neural_net.cpp
-    src/neuron.cpp
-    src/layer.cpp
-    src/net.cpp
-    src/cost_function.cpp
-)
+# Collect source files from src directory
+file(GLOB_RECURSE Sources src/*.cpp)
 
-add_executable(neural_net ${SOURCES}) 
+# Create library using all source files
+add_library(${This} STATIC ${Sources})
+
+add_executable(${This}_main "src/neural_net.cpp")
+
+target_link_libraries(${This}_main PRIVATE ${This})
+
+add_subdirectory(test)

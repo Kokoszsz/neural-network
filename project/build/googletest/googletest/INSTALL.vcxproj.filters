@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\kaczok\Desktop\neural-network\project\build\CMakeFiles\9e87ffcd150e4c30600b09c6d69f7f23\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{74F88037-ED61-39AD-A4A9-6D761C361BE7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
