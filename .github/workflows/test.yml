@@ -22,14 +22,11 @@ jobs:
     - name: List directory contents
       run: ls -la
 
-    - name: Move to project directory
-      run: cd project
-
     - name: Configure
-      run: cmake -Bbuild
+      run: cmake -Bproject/build -Sproject
 
     - name: Build
-      run: cmake --build build
+      run: cmake --build project/build
 
     - name: Run tests
-      run: ctest --test-dir build --output-on-failure
+      run: ctest --test-dir project/build --output-on-failure
