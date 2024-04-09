@@ -1,4 +1,4 @@
-#include <cmath>
+
 
 #include "net.h"
 #include "layer.h"
