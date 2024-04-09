@@ -1,6 +1,5 @@
 #include "json.hpp"
 
-#include <cmath>
 #include <fstream>
 #include <sstream>
 #include <string>
