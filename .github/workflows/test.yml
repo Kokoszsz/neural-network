@@ -9,42 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:name: Run Tests
-
-on:
-  push:
-    branches:
-      - main  # Change this to the branch you want to trigger the workflow on
-
-jobs:
-  build:
-    runs-on: windows-latest  # Use Windows runner instead of Ubuntu
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: List directory contents
-      run: dir
-
-    - name: Install CMake
-      run: choco install cmake --installargs '"ADD_CMAKE_TO_PATH=System"'
-
-    - name: List directory contents
-      run: dir
-
-    - name: List contents of project folder
-      run: dir project
-
-    - name: Configure
-      run: cmake -Bproject -Sproject
-
-    - name: Build
-      run: cmake --build project
-
-    - name: Run tests
-      run: ctest --test-dir project --output-on-failure
-
     - name: Checkout repository
       uses: actions/checkout@v2
 
