@@ -18,7 +18,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\kaczok\Desktop\neural-network\project\Cmakelists.txt" />
+    <CustomBuild Include="C:\Users\kaczok\Desktop\neural-network\project\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">

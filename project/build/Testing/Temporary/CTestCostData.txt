@@ -1,5 +1,5 @@
 NueralNetTest 9 0.0284105
 main_tests 3 0.0182043
-testtest 6 0.0223242
-test_cost_function 2 0.0091391
+testtest 7 0.0236323
+test_cost_function 3 0.00962813
 ---
