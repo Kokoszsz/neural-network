@@ -1,4 +1,4 @@
-
+#include <cmath>// must be because ubuntu lol
 
 #include "net.h"
 #include "layer.h"
