@@ -83,6 +83,7 @@
         "regex": "cpp",
         "set": "cpp",
         "unordered_set": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "condition_variable": "cpp"
     }
 }
