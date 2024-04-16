@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 3.8)
 
 set(This NueralNetTest)
 
-set(Sources
+set(Tests
     testtest.cpp
     test_cost_function.cpp
 )
 
-add_executable(${This} ${Sources})
+add_executable(${This} ${Tests})
 
 target_link_libraries(${This} PUBLIC
     gtest_main
@@ -15,7 +15,7 @@ target_link_libraries(${This} PUBLIC
 )
 
 # Add the tests
-foreach(test_src ${Sources})
+foreach(test_src ${Tests})
     get_filename_component(test_name ${test_src} NAME_WE)
     add_test(
         NAME ${test_name}
