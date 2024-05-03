@@ -11,12 +11,12 @@ class Neuron;
 class Layer{
     public:
         std::vector<Neuron> m_neurons;
-        size_t size() const {return m_neurons.size();}
-        void push_back(const Neuron &neuron);
-        Neuron &operator[](int i);
-        const Neuron &operator[](int i) const;
-        Neuron &back(); 
-        const Neuron &back() const; 
+        virtual size_t size() const {return m_neurons.size();}
+        virtual void push_back(const Neuron &neuron);
+        virtual Neuron &operator[](int i);
+        virtual const Neuron &operator[](int i) const;
+        virtual Neuron &back(); 
+        virtual const Neuron &back() const; 
     private:
 };
 

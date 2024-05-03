@@ -17,10 +17,10 @@ enable_testing()
 add_subdirectory(googletest)
 
 # Include directories for header files
-include_directories(include libraries include/net1)
+include_directories(include libraries)
 
 # Collect source files from src directory and its subdirectories
-file(GLOB_RECURSE Sources src/*.cpp src/*/*.cpp)
+file(GLOB_RECURSE Sources src/*.cpp )
 
 
 # Create library using all source files

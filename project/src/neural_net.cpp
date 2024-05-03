@@ -5,7 +5,7 @@
 #include <string>
 #include <cstdlib> // For system() function
 
-#include "neuron1.h"
+#include "neuron.h"
 #include "layer.h"
 #include "net.h"
 #include "cost_function.h"
@@ -14,7 +14,7 @@ using json = nlohmann::json;
 
 int main(){
 
-    std::vector<unsigned> topology = {2, 10, 20, 1};
+    std::vector<unsigned> topology = {2, 3, 3, 1};
 
     Net net(topology);
 

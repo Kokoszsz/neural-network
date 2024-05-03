@@ -2,7 +2,7 @@
 
 #include "net.h"
 #include "layer.h"
-#include "neuron1.h"
+#include "neuron.h"
 
 Connection::Connection(){
     weight = randomWeight();

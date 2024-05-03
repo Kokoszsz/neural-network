@@ -10,9 +10,6 @@
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\net.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\net1\neuron1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\neural_net.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

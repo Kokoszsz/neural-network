@@ -3,7 +3,7 @@
 
 #include "net.h"
 #include "layer.h"
-#include "neuron1.h"
+#include "neuron.h"
 
 void Net::getResults(std::vector<double> &resultVals) const{
     resultVals.clear();
@@ -70,7 +70,7 @@ Net::Net(const std::vector<unsigned> &topology){
         layers.push_back(Layer());
         unsigned numOutputs = layerNum == topology.size() - 1 ? 0 : topology[layerNum + 1];
         for(unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum){
-            layers.back().push_back(Neuron1(numOutputs, neuronNum));
+            layers.back().push_back(Neuron(numOutputs, neuronNum));
         }
         layers.back().back().setOutputVal(1.0);
     }
