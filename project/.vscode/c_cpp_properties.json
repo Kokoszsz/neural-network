@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/libraries",
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/include/base",
+                "${workspaceFolder}/include/net1",
                 "${workspaceFolder}/googletest/googletest/include"
             ],
             "defines": [

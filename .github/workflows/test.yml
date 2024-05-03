@@ -25,7 +25,6 @@ jobs:
     - name: List contents of project folder
       run: ls -la project
 
-
     - name: Configure
       run: cmake -Bproject -Sproject
 
@@ -34,3 +33,12 @@ jobs:
 
     - name: Run tests
       run: ctest --test-dir project --output-on-failure
+
+    - name: Run executable
+      run: project/build/Debug/neural_net_main.exe
+      env:
+        OUTPUT: |
+          $(${RUN_COMMAND})
+      shell: bash
+    - name: Show output
+      run: echo "$OUTPUT"

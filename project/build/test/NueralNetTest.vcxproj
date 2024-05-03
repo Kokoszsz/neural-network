@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/kaczok/Desktop/neural-network/project/googletest/googletest/include" /external:I "C:/Users/kaczok/Desktop/neural-network/project/googletest/googletest"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -106,10 +106,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -132,7 +132,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/kaczok/Desktop/neural-network/project/googletest/googletest/include" /external:I "C:/Users/kaczok/Desktop/neural-network/project/googletest/googletest"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -152,10 +152,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -178,7 +178,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/kaczok/Desktop/neural-network/project/googletest/googletest/include" /external:I "C:/Users/kaczok/Desktop/neural-network/project/googletest/googletest"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -198,10 +198,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -224,7 +224,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/kaczok/Desktop/neural-network/project/googletest/googletest/include" /external:I "C:/Users/kaczok/Desktop/neural-network/project/googletest/googletest"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -243,10 +243,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include\base;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kaczok\Desktop\neural-network\project\include;C:\Users\kaczok\Desktop\neural-network\project\libraries;C:\Users\kaczok\Desktop\neural-network\project\include\net1;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\include;C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
