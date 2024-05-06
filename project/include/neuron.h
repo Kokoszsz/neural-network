@@ -3,11 +3,13 @@
 
 #include <iostream>
 #include <vector>
-
+#include "layer.h"
 
 class Layer;
 
 class Connection{
+
+
     public:
         Connection();
         double weight;
@@ -21,15 +23,18 @@ class Neuron{
         Neuron(unsigned numOutputs, unsigned myIndex);
         void setOutputVal(double val){outputVal = val;}
         double getOutputVal() const {return outputVal;}
+        double getGradient() const {return m_gradient;} // Added for testing
+        int getMyIndex() const {return m_myIndex;} // Added for testing
+        int getOutputWeightsSize() const {return outputWeights.size();} // Added for testing
         void feedForward(const Layer &prevLayer);
-        virtual void calcOutputGradients(double targetVal);
-        virtual void calcHiddenGradients(const Layer &nextLayer);
+        void calcOutputGradients(double targetVal);
+        void calcHiddenGradients(const Layer &nextLayer);
         void updateInputWeights(Layer &prevLayer);
-    protected:
+    private:
         static double eta; // [0.0..1.0] overall net training rate
         static double alpha; // [0.0..n] multiplier of last weight change (momentum)
-        virtual double transferFunction(double x);
-        virtual double transferFunctionDerivative(double x);
+        double transferFunction(double x);
+        double transferFunctionDerivative(double x);
         double sumDOW(const Layer &nextLayer) const;
         double outputVal;
         std::vector<Connection> outputWeights;

@@ -33,16 +33,3 @@ jobs:
 
     - name: Run tests
       run: ctest --test-dir project --output-on-failure
-
-    - name: Set execute permission on executable
-      run: chmod +x project/build/Debug/neural_net_main.exe
-
-    - name: Run executable
-      run: project/build/Debug/neural_net_main.exe
-      env:
-        OUTPUT: |
-          $(${RUN_COMMAND})
-      shell: bash
-
-    - name: Show output
-      run: echo "$OUTPUT"

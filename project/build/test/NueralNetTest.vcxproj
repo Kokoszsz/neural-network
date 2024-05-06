@@ -327,6 +327,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\test\testtest.cpp" />
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\test\test_cost_function.cpp" />
+    <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\test\test_neuron.cpp" />
+    <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\test\test_layer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\kaczok\Desktop\neural-network\project\build\ZERO_CHECK.vcxproj">

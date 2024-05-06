@@ -5,6 +5,8 @@ set(This NueralNetTest)
 set(Tests
     testtest.cpp
     test_cost_function.cpp
+    test_neuron.cpp
+    test_layer.cpp
 )
 
 add_executable(${This} ${Tests})
