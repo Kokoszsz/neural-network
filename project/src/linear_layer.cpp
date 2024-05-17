@@ -8,7 +8,7 @@ void LinearLayer::feedForwardLayer(const std::shared_ptr<Layer> &prevLayer) {
         int neuronIndex = m_neurons[n].getMyIndex();
         for(unsigned m = 0; m < prevLayer->size(); ++m){
 
-            sum += prevLayer->m_neurons[m].getOutputVal() * prevLayer->m_neurons[m].getoutputWeights()[neuronIndex].weight; // problem here with last elemnts
+            sum += prevLayer->m_neurons[m].getOutputVal() * prevLayer->m_neurons[m].getoutputWeights()[neuronIndex].weight; 
         }
         m_neurons[n].outputVal = transferFunction(sum);
     }

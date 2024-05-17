@@ -19,12 +19,12 @@ class Layer{
         const Neuron &back() const; 
 
 
-        virtual void feedForwardLayer(const std::shared_ptr<Layer>& prevLayer);
-        virtual double transferFunction(double x);
-        virtual double transferFunctionDerivative(double x);
-        virtual void calcOutputGradients(const std::vector<double> &targetVals);
-        virtual void calcHiddenGradients(const std::shared_ptr<Layer> &nextLayer);
-        virtual void backPropagation(std::shared_ptr<Layer> &prevLayer);
+        virtual void feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) = 0;
+        virtual double transferFunction(double x) = 0;
+        virtual double transferFunctionDerivative(double x) = 0;
+        virtual void calcOutputGradients(const std::vector<double> &targetVals) = 0;
+        virtual void calcHiddenGradients(const std::shared_ptr<Layer> &nextLayer) = 0;
+        virtual void backPropagation(std::shared_ptr<Layer> &prevLayer) = 0;
 
 
 

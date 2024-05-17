@@ -22,28 +22,3 @@ const Neuron &Layer::back() const {
     }
     return m_neurons.back();
 }
-
-void Layer::feedForwardLayer(const std::shared_ptr<Layer> &prevLayer) {
-    
-}
-
-
-double Layer::transferFunction(double x) {
-    return 1;
-}
-
-double Layer::transferFunctionDerivative(double x) {
-    return 1;
-}
-
-void Layer::calcOutputGradients(const std::vector<double> &targetVals) {
-    
-}
-
-void Layer::calcHiddenGradients(const std::shared_ptr<Layer> &nextLayer) {
-    
-}
-
-void Layer::backPropagation(std::shared_ptr<Layer> &prevLayer) {
-    
-}
