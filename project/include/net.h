@@ -4,8 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <cassert>
-
-class Layer;
+#include "linear_layer.h"
 
 
 class Net{
@@ -16,7 +15,7 @@ class Net{
         void getResults(std::vector<double> &resultVals) const;
 
     private:
-        std::vector<Layer> layers;
+        std::vector<std::shared_ptr<Layer>> layers;
         double error;
         double recentAverageError;
         double recentAverageSmoothingFactor;

@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\linear_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\net.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -14,6 +17,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\neuron.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\sigmoid_layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

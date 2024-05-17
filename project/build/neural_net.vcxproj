@@ -271,9 +271,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\cost_function.cpp" />
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\layer.cpp" />
+    <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\linear_layer.cpp" />
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\net.cpp" />
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\neural_net.cpp" />
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\neuron.cpp" />
+    <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\sigmoid_layer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\kaczok\Desktop\neural-network\project\build\ZERO_CHECK.vcxproj">

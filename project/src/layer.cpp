@@ -2,21 +2,11 @@
 #include "layer.h"
 #include "neuron.h"
 
+double Layer::eta = 0.15;
+double Layer::alpha = 0.5;
+
 void Layer::push_back(const Neuron& element) {
     m_neurons.push_back(element);
-}
-Neuron& Layer::operator[](int i) {
-    if (i < 0 || i >= size()) {
-        throw std::out_of_range("Index out of range");
-    }
-    return m_neurons[i];
-}
-
-const Neuron& Layer::operator[](int i) const {
-    if (i < 0 || i >= size()) {
-        throw std::out_of_range("Index out of range");
-    }
-    return m_neurons[i];
 }
 
 Neuron &Layer::back() {
@@ -31,4 +21,29 @@ const Neuron &Layer::back() const {
         throw std::out_of_range("Layer is empty");
     }
     return m_neurons.back();
+}
+
+void Layer::feedForwardLayer(const std::shared_ptr<Layer> &prevLayer) {
+    
+}
+
+
+double Layer::transferFunction(double x) {
+    return 1;
+}
+
+double Layer::transferFunctionDerivative(double x) {
+    return 1;
+}
+
+void Layer::calcOutputGradients(const std::vector<double> &targetVals) {
+    
+}
+
+void Layer::calcHiddenGradients(const std::shared_ptr<Layer> &nextLayer) {
+    
+}
+
+void Layer::backPropagation(std::shared_ptr<Layer> &prevLayer) {
+    
 }

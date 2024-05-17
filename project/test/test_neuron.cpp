@@ -30,22 +30,3 @@ TEST_F(NeuronTest, SetAndGetOutputVal) {
     neuron.setOutputVal(0.5);
     EXPECT_EQ(neuron.getOutputVal(), 0.5);
 }
-
-// Test case to verify the behavior of the feedForward method
-TEST_F(NeuronTest, FeedForward) {
-    MockLayer prevLayer;
-
-    neuron.feedForward(prevLayer);
-
-    // Verify outputVal is set correctly
-    EXPECT_NEAR(neuron.getOutputVal(), 0.5, 0.000001); // Adjust expected value as needed
-}
-
-// Test case to verify the behavior of the updateInputWeights method
-TEST_F(NeuronTest, UpdateInputWeights) {
-    MockLayer prevLayer;
-
-    neuron.updateInputWeights(prevLayer);
-
-    // Add assertions to verify the behavior of the method
-}

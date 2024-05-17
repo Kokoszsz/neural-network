@@ -23,23 +23,20 @@ class Neuron{
         Neuron(unsigned numOutputs, unsigned myIndex);
         void setOutputVal(double val){outputVal = val;}
         double getOutputVal() const {return outputVal;}
+        std::vector<Connection> getoutputWeights() const {return outputWeights;}
         double getGradient() const {return m_gradient;} // Added for testing
-        int getMyIndex() const {return m_myIndex;} // Added for testing
+        int getMyIndex() const {return m_myIndex;}
         int getOutputWeightsSize() const {return outputWeights.size();} // Added for testing
-        void feedForward(const Layer &prevLayer);
-        void calcOutputGradients(double targetVal);
-        void calcHiddenGradients(const Layer &nextLayer);
-        void updateInputWeights(Layer &prevLayer);
-    private:
-        static double eta; // [0.0..1.0] overall net training rate
-        static double alpha; // [0.0..n] multiplier of last weight change (momentum)
-        double transferFunction(double x);
-        double transferFunctionDerivative(double x);
-        double sumDOW(const Layer &nextLayer) const;
+        void updateWeight(int m_myIndex, double newDeltaWeight);
+        void updateDeltaWeight(int m_myIndex, double newDeltaWeight);
+ 
+        double sumDOW(const std::shared_ptr<Layer> &nextLayer) const;
         double outputVal;
+        double m_gradient;
+    private:
         std::vector<Connection> outputWeights;
         unsigned m_myIndex;
-        double m_gradient;
+
 };
 
 

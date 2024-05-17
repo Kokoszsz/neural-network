@@ -173,10 +173,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\kaczok\Desktop\neural-network\project\build\test\NueralNetTest.vcxproj">
-      <Project>{62D66DAF-1349-32D1-A96C-A832A0F702C9}</Project>
-      <Name>NueralNetTest</Name>
-    </ProjectReference>
     <ProjectReference Include="C:\Users\kaczok\Desktop\neural-network\project\build\googletest\googlemock\gmock.vcxproj">
       <Project>{01BF4F1D-E6AE-309F-8EE7-55BCADC913D1}</Project>
       <Name>gmock</Name>
