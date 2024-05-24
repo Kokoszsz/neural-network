@@ -24,11 +24,39 @@
 	ProcessorClockFrequency="3110"
 	>
 	<Testing>
-		<StartDateTime>May 17 16:38 [NON-UTF-8-BYTE-0x8C]rodkowoeuropejski czas letni</StartDateTime>
-		<StartTestTime>1715956737</StartTestTime>
-		<TestList/>
-		<EndDateTime>May 17 16:38 [NON-UTF-8-BYTE-0x8C]rodkowoeuropejski czas letni</EndDateTime>
-		<EndTestTime>1715956737</EndTestTime>
+		<StartDateTime>May 17 17:20 [NON-UTF-8-BYTE-0x8C]rodkowoeuropejski czas letni</StartDateTime>
+		<StartTestTime>1715959239</StartTestTime>
+		<TestList>
+			<Test>./test/test_layer</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>test_layer</Name>
+			<Path>./test</Path>
+			<FullName>./test/test_layer</FullName>
+			<FullCommandLine>C:\Users\kaczok\Desktop\neural-network\project\build\test\Debug\NueralNetTest.exe "--gtest_filter=test_layer:*"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0469107</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\kaczok\Desktop\neural-network\project\build\test\Debug\NueralNetTest.exe "--gtest_filter=test_layer:*"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNk01vIjEMhu/zK3yElRiVqpUqpB5YtkWrbaGidC8MWqUZw2QnE48Sp5T++s5HRWGgUF/y4cfOG8ueeGOUWUImlGm1YWEpg0EvenJoXZQK+UZp9AtdypRHBr0VumOQV2TTKLf0HyVHS6KlRka3s3VWRsty969MHUoZjIixB8MKgWnhgYXSjBauoeK0WKPt/Qhm1xubw+RD31XFuFrgRXUA51WxhsGss7E5DDU9C10DaF6UJZOhKWDkjs8bcLfmqqR9vRJrN7UeS23BDCZPI6hs3vCFW1Bt4z9fQ9A6g8y1v/twjQMTC90Ovo4akONbbyQrMvuCm95wILT0WjDeP97syj6KQqt7flx9M/wj4vQHRkU3HZL+eR8+IvdNPEQee849/xV6V/pR9GTdP6OP1fxyu/Huyhbdl7y5Dh+8S34Kme7q3PdvxB1OM87RCib728T4OiIzINPsthPwdx8Iw2IkpolykAvLQAvgBOsiUVVJWAkHFjN6wRicMhJBFZP1KhFjV8OJRZeQjsvo7tn5BTyvy7mcB+9oMGbb====</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 17 17:20 [NON-UTF-8-BYTE-0x8C]rodkowoeuropejski czas letni</EndDateTime>
+		<EndTestTime>1715959239</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

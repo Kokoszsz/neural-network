@@ -7,6 +7,7 @@
 
 #include "neuron.h"
 #include "linear_layer.h"
+#include "sigmoid_layer.h"
 #include "net.h"
 #include "cost_function.h"
 
@@ -58,7 +59,7 @@ int main(){
     file.close();
 
     //train neural network
-    for (int i = 0 ; i < 10000; i++){
+    for (int i = 0 ; i < 1000; i++){
         for(unsigned j = 0; j < inputVals.size(); ++j){
             net.feedForward(inputVals[j]);
             net.backProp(targetVals[j]);

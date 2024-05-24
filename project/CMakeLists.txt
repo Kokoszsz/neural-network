@@ -17,7 +17,7 @@ enable_testing()
 add_subdirectory(googletest)
 
 # Include directories for header files
-include_directories(include libraries)
+include_directories(include include/layers libraries)
 
 # Collect source files from src directory and its subdirectories
 file(GLOB_RECURSE Sources src/*.cpp )
@@ -30,4 +30,4 @@ add_executable(${This}_main "src/neural_net.cpp")
 
 target_link_libraries(${This}_main PRIVATE ${This})
 
-#add_subdirectory(test)
+add_subdirectory(test)

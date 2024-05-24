@@ -2,6 +2,7 @@
 
 #include "net.h"
 #include "linear_layer.h"
+#include "sigmoid_layer.h"
 #include "neuron.h"
 
 Connection::Connection(){

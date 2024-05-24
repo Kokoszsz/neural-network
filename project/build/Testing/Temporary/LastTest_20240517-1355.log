@@ -1,3 +1,53 @@
-Start testing: May 17 16:38 Œrodkowoeuropejski czas letni
+Start testing: May 17 17:20 Œrodkowoeuropejski czas letni
 ----------------------------------------------------------
-End testing: May 17 16:38 Œrodkowoeuropejski czas letni
+4/4 Testing: test_layer
+4/4 Test: test_layer
+Command: "C:/Users/kaczok/Desktop/neural-network/project/build/test/Debug/NueralNetTest.exe" "--gtest_filter=test_layer:*"
+Directory: C:/Users/kaczok/Desktop/neural-network/project/build/test
+"test_layer" start time: May 17 17:20 Œrodkowoeuropejski czas letni
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\kaczok\Desktop\neural-network\project\googletest\googletest\src\gtest_main.cc
+Note: Google Test filter = test_layer:*
+[==========] Running 8 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from AlwaysTrueTest
+[ RUN      ] AlwaysTrueTest.TrueTest
+[       OK ] AlwaysTrueTest.TrueTest (0 ms)
+[----------] 1 test from AlwaysTrueTest (0 ms total)
+
+[----------] 1 test from CostFunctionTest
+[ RUN      ] CostFunctionTest.CalculateMSE
+[       OK ] CostFunctionTest.CalculateMSE (12 ms)
+[----------] 1 test from CostFunctionTest (12 ms total)
+
+[----------] 1 test from NeuronTest
+[ RUN      ] NeuronTest.SetAndGetOutputVal
+[       OK ] NeuronTest.SetAndGetOutputVal (0 ms)
+[----------] 1 test from NeuronTest (0 ms total)
+
+[----------] 5 tests from LayerTest
+[ RUN      ] LayerTest.PushBack
+[       OK ] LayerTest.PushBack (0 ms)
+[ RUN      ] LayerTest.OperatorIndexNonConst
+[       OK ] LayerTest.OperatorIndexNonConst (0 ms)
+[ RUN      ] LayerTest.OperatorIndexConst
+[       OK ] LayerTest.OperatorIndexConst (0 ms)
+[ RUN      ] LayerTest.BackNonConst
+[       OK ] LayerTest.BackNonConst (0 ms)
+[ RUN      ] LayerTest.BackConst
+[       OK ] LayerTest.BackConst (0 ms)
+[----------] 5 tests from LayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 4 test suites ran. (13 ms total)
+[  PASSED  ] 8 tests.
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"test_layer" end time: May 17 17:20 Œrodkowoeuropejski czas letni
+"test_layer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 17 17:20 Œrodkowoeuropejski czas letni

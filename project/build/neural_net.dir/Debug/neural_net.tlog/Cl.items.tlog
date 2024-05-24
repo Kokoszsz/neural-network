@@ -1,7 +1,9 @@
 C:\Users\kaczok\Desktop\neural-network\project\src\cost_function.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\cost_function.obj
 C:\Users\kaczok\Desktop\neural-network\project\src\layer.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\layer.obj
-C:\Users\kaczok\Desktop\neural-network\project\src\linear_layer.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\linear_layer.obj
+C:\Users\kaczok\Desktop\neural-network\project\src\layers\linear_layer.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\linear_layer.obj
+C:\Users\kaczok\Desktop\neural-network\project\src\layers\sigmoid_layer.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\sigmoid_layer.obj
+C:\Users\kaczok\Desktop\neural-network\project\src\layers\softmax_function.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\softmax_function.obj
+C:\Users\kaczok\Desktop\neural-network\project\src\layers\tanh_layer.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\tanh_layer.obj
 C:\Users\kaczok\Desktop\neural-network\project\src\net.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\net.obj
 C:\Users\kaczok\Desktop\neural-network\project\src\neural_net.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\neural_net.obj
 C:\Users\kaczok\Desktop\neural-network\project\src\neuron.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\neuron.obj
-C:\Users\kaczok\Desktop\neural-network\project\src\sigmoid_layer.cpp;C:\Users\kaczok\Desktop\neural-network\project\build\neural_net.dir\Debug\sigmoid_layer.obj

@@ -23,7 +23,7 @@ class Neuron{
         Neuron(unsigned numOutputs, unsigned myIndex);
         void setOutputVal(double val){outputVal = val;}
         double getOutputVal() const {return outputVal;}
-        std::vector<Connection> getoutputWeights() const {return outputWeights;}
+        std::vector<Connection> getOutputWeights() const {return outputWeights;}
         double getGradient() const {return m_gradient;} // Added for testing
         int getMyIndex() const {return m_myIndex;}
         int getOutputWeightsSize() const {return outputWeights.size();} // Added for testing

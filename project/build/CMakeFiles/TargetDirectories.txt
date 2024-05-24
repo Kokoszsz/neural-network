@@ -17,3 +17,6 @@ C:/Users/kaczok/Desktop/neural-network/project/build/googletest/googletest/CMake
 C:/Users/kaczok/Desktop/neural-network/project/build/googletest/googletest/CMakeFiles/RUN_TESTS.dir
 C:/Users/kaczok/Desktop/neural-network/project/build/googletest/googletest/CMakeFiles/INSTALL.dir
 C:/Users/kaczok/Desktop/neural-network/project/build/googletest/googletest/CMakeFiles/ALL_BUILD.dir
+C:/Users/kaczok/Desktop/neural-network/project/build/test/CMakeFiles/NueralNetTest.dir
+C:/Users/kaczok/Desktop/neural-network/project/build/test/CMakeFiles/RUN_TESTS.dir
+C:/Users/kaczok/Desktop/neural-network/project/build/test/CMakeFiles/INSTALL.dir
