@@ -1,7 +1,0 @@
-NueralNetTest 9 0.0284105
-main_tests 3 0.0182043
-testtest 20 0.0337421
-test_cost_function 16 0.0105647
-test_neuron 10 0.0124977
-test_layer 4 0.0111642
----
