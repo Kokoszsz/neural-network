@@ -4,10 +4,10 @@
 #include "linear_layer.h"
 #include "neuron.h"
 
-Connection::Connection(){
+Neuron::Neuron(){
     weight = randomWeight();
 }
-double Connection::randomWeight(){
+double Neuron::randomWeight(){
     return rand() / double(RAND_MAX);
 }
 

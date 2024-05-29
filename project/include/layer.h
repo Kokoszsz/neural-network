@@ -13,9 +13,6 @@ class Neuron;
 class Layer{
     public:
         size_t size() const {return outputWeights.size();}
-        void push_back(const Neuron &neuron);
-        Neuron &back(); 
-        const Neuron &back() const; 
 
 
         virtual void feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) = 0;
@@ -27,7 +24,7 @@ class Layer{
 
         std::vector<double> m_gradients;
         std::vector<double> outputVals;
-        std::vector<std::vector<Connection>> outputWeights;
+        std::vector<std::vector<Neuron>> outputWeights;
 
     protected:
         static double eta; // [0.0..1.0] overall net training rate

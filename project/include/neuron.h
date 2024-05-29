@@ -6,21 +6,15 @@
 
 
 
-class Connection{
+class Neuron{
 
 
     public:
-        Connection();
+        Neuron();
         double weight;
         double deltaWeight;
     private:
         double randomWeight();
-};
-
-class Neuron{
-    public:
-        Neuron(unsigned numOutputs, unsigned myIndex);
-
 };
 
 

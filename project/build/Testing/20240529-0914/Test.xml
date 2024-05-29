@@ -24,11 +24,11 @@
 	ProcessorClockFrequency="3110"
 	>
 	<Testing>
-		<StartDateTime>May 29 14:52 [NON-UTF-8-BYTE-0x8C]rodkowoeuropejski czas letni</StartDateTime>
-		<StartTestTime>1716987134</StartTestTime>
+		<StartDateTime>May 29 16:28 [NON-UTF-8-BYTE-0x8C]rodkowoeuropejski czas letni</StartDateTime>
+		<StartTestTime>1716992888</StartTestTime>
 		<TestList/>
-		<EndDateTime>May 29 14:52 [NON-UTF-8-BYTE-0x8C]rodkowoeuropejski czas letni</EndDateTime>
-		<EndTestTime>1716987134</EndTestTime>
+		<EndDateTime>May 29 16:28 [NON-UTF-8-BYTE-0x8C]rodkowoeuropejski czas letni</EndDateTime>
+		<EndTestTime>1716992888</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
