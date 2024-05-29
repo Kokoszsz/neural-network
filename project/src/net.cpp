@@ -63,10 +63,14 @@ Net::Net(const std::vector<unsigned> &topology){
         std::shared_ptr<Layer> &prevLayer = layers[layerNum];
         unsigned numOutputs = layerNum == topology.size() - 1 ? 0 : topology[layerNum + 1];
         for(unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum){
+            layers.back()->outputWeights.push_back(std::vector<Connection>());
+            layers.back()->outputVals.push_back(0.0);
+            layers.back()->m_gradients.push_back(0.0);
             for(unsigned c = 0; c < numOutputs; ++c){
                 layers.back()->outputWeights[neuronNum].push_back(Connection());
             }
         }
         layers.back()->outputVals.back() = 1.0;
     }
+
 }

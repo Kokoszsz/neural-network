@@ -12,8 +12,7 @@ class Neuron;
 
 class Layer{
     public:
-        std::vector<Neuron> m_neurons;
-        size_t size() const {return m_neurons.size();}
+        size_t size() const {return outputWeights.size();}
         void push_back(const Neuron &neuron);
         Neuron &back(); 
         const Neuron &back() const; 
@@ -26,8 +25,8 @@ class Layer{
         virtual double sumDOW(const std::shared_ptr<Layer> &nextLayer, int n) const = 0;
 
 
-        static std::vector<double> m_gradients;
-        static std::vector<double> outputVals;
+        std::vector<double> m_gradients;
+        std::vector<double> outputVals;
         std::vector<std::vector<Connection>> outputWeights;
 
     protected:

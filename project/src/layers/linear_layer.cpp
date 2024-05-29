@@ -2,7 +2,6 @@
 
 
 void LinearLayer::feedForwardLayer(const std::shared_ptr<Layer> &prevLayer) {
-
     for (unsigned n = 0; n < size() - 1; ++n) {
         double sum = 0.0;
         for(unsigned m = 0; m < prevLayer->size(); ++m){
@@ -31,7 +30,6 @@ void LinearLayer::calcOutputGradients(const std::vector<double> &targetVals){
 void LinearLayer::backPropagation(std::shared_ptr<Layer> &prevLayer){
     for(unsigned n = 0; n < size() - 1; ++n){
         for(unsigned m = 0; m < prevLayer->size(); ++m){
-            Neuron &neuron = prevLayer->m_neurons[m];
             double oldDeltaWeight =  prevLayer->outputWeights[m][n].deltaWeight;
             double newDeltaWeight = 
                 // Individual input, magnified by the gradient and train rate
