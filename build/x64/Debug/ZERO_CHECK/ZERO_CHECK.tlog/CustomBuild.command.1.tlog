@@ -1,0 +1,10 @@
+^C:\USERS\KACZOK\DESKTOP\NEURAL-NETWORK\BUILD\CMAKEFILES\D449B7C1E952B196B19A3B9444A98ED3\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/kaczok/Desktop/neural-network/project -BC:/Users/kaczok/Desktop/neural-network/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/kaczok/Desktop/neural-network/build/neural_net.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

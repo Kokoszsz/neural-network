@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\layers\linear_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\kaczok\Desktop\neural-network\project\src\net.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
