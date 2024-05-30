@@ -9,6 +9,7 @@
 #include "neuron.h"
 #include "linear_layer.h"
 #include "sigmoid_layer.h"
+#include "tanh_layer.h"
 #include "net.h"
 #include "cost_function.h"
 
@@ -69,18 +70,18 @@ int main(){
     }
 
     // see how well the neural network performs
-    std::vector<double> resultVals;
+    std::vector<std::vector<double>> resultVals(inputVals.size());
     for(unsigned i = 0; i < inputVals.size(); ++i){
         net.feedForward(inputVals[i]);
         net.backProp(targetVals[i]);
-        net.getResults(resultVals);
-        std::cout << "Input: " << inputVals[i][0] << ", " << inputVals[i][1] << " Target: " << targetVals[i][0] <<" Output: " << resultVals[0] << std::endl;
+        net.getResults(resultVals[i]);
+        std::cout << "Input: " << inputVals[i][0] << ", " << inputVals[i][1] << " Target: " << targetVals[i][0] <<" Output: " << resultVals[i][0] << std::endl;
     }
 
 
     // Calculate the Mean Squared Error (MSE)
     CostFunction costFunction;
-    double mse = costFunction.calculate_mse(resultVals, targetVals[0]);
+    double mse = costFunction.calculate_mse(targetVals, resultVals);
     std::cout << "Mean Squared Error: " << mse << std::endl;
 
     // Create a JSON object to hold the network topology and training data

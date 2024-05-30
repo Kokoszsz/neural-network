@@ -10,7 +10,7 @@
 
 class CostFunction {
 public:
-    static double calculate_mse(const std::vector<double> &predicted, const std::vector<double> &target); 
+    static double calculate_mse(const std::vector<std::vector<double>> &targetVals, const std::vector<std::vector<double>> &resultVals); 
 };
 
 

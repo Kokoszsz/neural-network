@@ -1,6 +1,6 @@
-#include "sigmoid_layer.h"
+#include "tanh_layer.h"
 
-void SigmoidLayer::feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) {
+void TanhLayer::feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) {
     for (unsigned n = 0; n < size() - 1; ++n) {
         double sum = 0.0;
         for(unsigned m = 0; m < prevLayer->size(); ++m){
@@ -10,21 +10,21 @@ void SigmoidLayer::feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) {
     }
 }
 
-void SigmoidLayer::calcHiddenGradients(const std::shared_ptr<Layer>& nextLayer) {
+void TanhLayer::calcHiddenGradients(const std::shared_ptr<Layer>& nextLayer) {
     for(unsigned n = 0; n < size(); ++n){
         double dow = this->sumDOW(nextLayer, n);
         m_gradients[n] = dow * activationFunctionDerivative(outputVals[n]);
     }
 }
 
-void SigmoidLayer::calcOutputGradients(const std::vector<double>& targetVals) {
+void TanhLayer::calcOutputGradients(const std::vector<double>& targetVals) {
     for(unsigned n = 0; n < size() - 1; ++n){
         double delta = targetVals[n] - outputVals[n];
         m_gradients[n] = delta * activationFunctionDerivative(outputVals[n]);
     }
 }
 
-void SigmoidLayer::backPropagation(std::shared_ptr<Layer>& prevLayer) {
+void TanhLayer::backPropagation(std::shared_ptr<Layer>& prevLayer) {
     for(unsigned n = 0; n < size() - 1; ++n){
         for(unsigned m = 0; m < prevLayer->size(); ++m){
             double oldDeltaWeight =  prevLayer->outputWeights[m][n].deltaWeight;
@@ -36,11 +36,11 @@ void SigmoidLayer::backPropagation(std::shared_ptr<Layer>& prevLayer) {
     }
 }
 
-double SigmoidLayer::activationFunction(double x)  {
-    return 1.0 / (1.0 + exp(-x)); 
+double TanhLayer::activationFunction(double x) {
+    return tanh(x);
 }
 
-double SigmoidLayer::activationFunctionDerivative(double x)  {
-    return x * (1.0 - x); 
+double TanhLayer::activationFunctionDerivative(double x) {
+    return 1.0 - x * x; // tanh derivative
 }
 
