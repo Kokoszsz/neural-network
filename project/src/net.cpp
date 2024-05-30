@@ -3,6 +3,7 @@
 
 #include "net.h"
 #include "linear_layer.h"
+#include "sigmoid_layer.h"
 #include "neuron.h"
 
 void Net::getResults(std::vector<double> &resultVals) const{
@@ -58,7 +59,7 @@ void Net::feedForward(const std::vector<double> &inputVals){
 Net::Net(const std::vector<unsigned> &topology){
     unsigned numLayers = topology.size();
     for(unsigned layerNum = 0; layerNum < numLayers; ++layerNum){
-        std::shared_ptr<Layer> layer = std::make_shared<LinearLayer>();
+        std::shared_ptr<Layer> layer = std::make_shared<SigmoidLayer>();
         layers.push_back(layer);
         std::shared_ptr<Layer> &prevLayer = layers[layerNum];
         unsigned numOutputs = layerNum == topology.size() - 1 ? 0 : topology[layerNum + 1];

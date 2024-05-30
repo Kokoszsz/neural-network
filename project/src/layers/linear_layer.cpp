@@ -8,7 +8,7 @@ void LinearLayer::feedForwardLayer(const std::shared_ptr<Layer> &prevLayer) {
 
             sum += prevLayer->outputVals[m] * prevLayer->outputWeights[m][n].weight; 
         }
-        prevLayer->outputVals[n] = sum;
+        outputVals[n] = sum;
     }
 }
 
@@ -46,11 +46,5 @@ void LinearLayer::backPropagation(std::shared_ptr<Layer> &prevLayer){
     }
 }
 
-double LinearLayer::sumDOW(const std::shared_ptr<Layer> &nextLayer, int n) const{
-    double sum = 0.0;
-    for(unsigned m = 0; m < nextLayer->size() - 1; ++m){
-        sum += outputWeights[n][m].weight * nextLayer->m_gradients[m];
-    }
-    return sum;
-}
+
 

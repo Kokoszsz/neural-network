@@ -8,6 +8,7 @@
 
 #include "neuron.h"
 #include "linear_layer.h"
+#include "sigmoid_layer.h"
 #include "net.h"
 #include "cost_function.h"
 

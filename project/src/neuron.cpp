@@ -6,6 +6,7 @@
 
 Neuron::Neuron(){
     weight = randomWeight();
+    deltaWeight = randomWeight();
 }
 double Neuron::randomWeight(){
     return rand() / double(RAND_MAX);

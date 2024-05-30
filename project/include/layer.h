@@ -19,8 +19,8 @@ class Layer{
         virtual void calcOutputGradients(const std::vector<double> &targetVals) = 0;
         virtual void calcHiddenGradients(const std::shared_ptr<Layer> &nextLayer) = 0;
         virtual void backPropagation(std::shared_ptr<Layer> &prevLayer) = 0;
-        virtual double sumDOW(const std::shared_ptr<Layer> &nextLayer, int n) const = 0;
 
+        virtual double sumDOW(const std::shared_ptr<Layer> &nextLayer, int n) const;
 
         std::vector<double> m_gradients;
         std::vector<double> outputVals;
