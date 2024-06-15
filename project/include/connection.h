@@ -1,16 +1,16 @@
-#ifndef NEURON_H
-#define NEURON_H
+#ifndef CONNECTION_H
+#define CONNECTION_H
 
 #include <iostream>
 #include <vector>
 
 
 
-class Neuron{
+class Connection{
 
 
     public:
-        Neuron();
+        Connection();
         double weight;
         double deltaWeight;
     private:

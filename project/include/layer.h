@@ -4,10 +4,10 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "neuron.h"
+#include "connection.h"
 
 
-class Neuron;
+class Connection;
 
 
 class Layer{
@@ -24,7 +24,7 @@ class Layer{
 
         std::vector<double> m_gradients;
         std::vector<double> outputVals;
-        std::vector<std::vector<Neuron>> outputWeights;
+        std::vector<std::vector<Connection>> outputWeights;
 
     protected:
         static double eta; // [0.0..1.0] overall net training rate

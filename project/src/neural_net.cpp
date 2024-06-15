@@ -6,7 +6,7 @@
 #include <cstdlib> // For system() function
 #include <chrono> // For timing
 
-#include "neuron.h"
+#include "connection.h"
 #include "linear_layer.h"
 #include "sigmoid_layer.h"
 #include "tanh_layer.h"

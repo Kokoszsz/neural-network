@@ -2,13 +2,13 @@
 
 #include "net.h"
 #include "linear_layer.h"
-#include "neuron.h"
+#include "connection.h"
 
-Neuron::Neuron(){
+Connection::Connection(){
     weight = randomWeight();
     deltaWeight = randomWeight();
 }
-double Neuron::randomWeight(){
+double Connection::randomWeight(){
     return rand() / double(RAND_MAX);
 }
 

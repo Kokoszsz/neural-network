@@ -5,7 +5,7 @@
 #include "linear_layer.h"
 #include "sigmoid_layer.h"
 #include "tanh_layer.h"
-#include "neuron.h"
+#include "connection.h"
 
 void Net::getResults(std::vector<double> &resultVals) const{
     resultVals.clear();
@@ -65,13 +65,13 @@ Net::Net(const std::vector<unsigned> &topology){
         std::shared_ptr<Layer> &prevLayer = layers[layerNum];
         unsigned numOutputs = layerNum == topology.size() - 1 ? 0 : topology[layerNum + 1];
         unsigned numNeurons = topology[layerNum] + 1; // +1 for bias neuron
-        
+
         layers.back()->outputVals.resize(numNeurons, 0.0);
         layers.back()->m_gradients.resize(numNeurons, 0.0);
         for(unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum){
-            layers.back()->outputWeights.push_back(std::vector<Neuron>());
+            layers.back()->outputWeights.push_back(std::vector<Connection>());
             for(unsigned c = 0; c < numOutputs; ++c){
-                layers.back()->outputWeights[neuronNum].push_back(Neuron());
+                layers.back()->outputWeights[neuronNum].push_back(Connection());
             }
         }
         layers.back()->outputVals.back() = 1.0;
