@@ -4,12 +4,13 @@
 #include "net.h"
 #include "linear_layer.h"
 #include "sigmoid_layer.h"
-#include "neuron.h"
+#include "tanh_layer.h"
+#include "connection.h"
 
 void Net::getResults(std::vector<double> &resultVals) const{
     resultVals.clear();
     for(unsigned n = 0; n < layers.back()->size() - 1; ++n){
-        resultVals.push_back(layers.back()->m_neurons[n].getOutputVal());
+        resultVals.push_back(layers.back()->outputVals[n]);
     }
 }
 
@@ -18,7 +19,7 @@ void Net::backProp(const std::vector<double> &targetVals){
     std::shared_ptr<Layer> &outputLayer = layers.back();
     error = 0.0;
     for(unsigned n = 0; n < outputLayer->size() - 1; ++n){
-        double delta = targetVals[n] - outputLayer->m_neurons[n].getOutputVal();
+        double delta = targetVals[n] - outputLayer->outputVals[n];
         error += delta * delta;
     }
     error /= outputLayer->size() - 1;
@@ -46,7 +47,7 @@ void Net::backProp(const std::vector<double> &targetVals){
 void Net::feedForward(const std::vector<double> &inputVals){
     assert(inputVals.size() == layers[0]->size() - 1);
     for(unsigned i = 0; i < inputVals.size(); ++i){
-        layers[0]->m_neurons[i].setOutputVal(inputVals[i]);
+        layers[0]->outputVals[i] = inputVals[i];
     }
     // Forward propagate
     for(unsigned layerNum = 1; layerNum < layers.size(); ++layerNum){
@@ -63,9 +64,17 @@ Net::Net(const std::vector<unsigned> &topology){
         layers.push_back(layer);
         std::shared_ptr<Layer> &prevLayer = layers[layerNum];
         unsigned numOutputs = layerNum == topology.size() - 1 ? 0 : topology[layerNum + 1];
+        unsigned numNeurons = topology[layerNum] + 1; // +1 for bias neuron
+
+        layers.back()->outputVals.resize(numNeurons, 0.0);
+        layers.back()->m_gradients.resize(numNeurons, 0.0);
         for(unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum){
-            layers.back()->push_back(Neuron(numOutputs, neuronNum));
+            layers.back()->outputWeights.push_back(std::vector<Connection>());
+            for(unsigned c = 0; c < numOutputs; ++c){
+                layers.back()->outputWeights[neuronNum].push_back(Connection());
+            }
         }
-        layers.back()->back().setOutputVal(1.0);
+        layers.back()->outputVals.back() = 1.0;
     }
+
 }

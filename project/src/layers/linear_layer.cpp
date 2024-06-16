@@ -2,50 +2,49 @@
 
 
 void LinearLayer::feedForwardLayer(const std::shared_ptr<Layer> &prevLayer) {
-
     for (unsigned n = 0; n < size() - 1; ++n) {
         double sum = 0.0;
-        int neuronIndex = m_neurons[n].getMyIndex();
         for(unsigned m = 0; m < prevLayer->size(); ++m){
 
-            sum += prevLayer->m_neurons[m].getOutputVal() * prevLayer->m_neurons[m].getOutputWeights()[neuronIndex].weight; 
+            sum += prevLayer->outputVals[m] * prevLayer->outputWeights[m][n].weight; 
         }
-        m_neurons[n].outputVal = sum;
+        outputVals[n] = sum;
     }
 }
 
 
 void LinearLayer::calcHiddenGradients(const std::shared_ptr<Layer> &nextLayer){
         for(unsigned n = 0; n < size(); ++n){
-            double dow = m_neurons[n].sumDOW(nextLayer);
-            m_neurons[n].m_gradient = dow;
+            double dow = this->sumDOW(nextLayer, n);
+            m_gradients[n] = dow;
         }
 }
 
 void LinearLayer::calcOutputGradients(const std::vector<double> &targetVals){
     for(unsigned n = 0; n < size() - 1; ++n){
-        double delta = targetVals[n] - m_neurons[n].outputVal;
-        m_neurons[n].m_gradient = delta;
+        double delta = targetVals[n] - outputVals[n];
+        m_gradients[n] = delta;
     }
 }
 
 void LinearLayer::backPropagation(std::shared_ptr<Layer> &prevLayer){
     for(unsigned n = 0; n < size() - 1; ++n){
-        int m_myIndex = m_neurons[n].getMyIndex();
         for(unsigned m = 0; m < prevLayer->size(); ++m){
-            Neuron &neuron = prevLayer->m_neurons[m];
-            double oldDeltaWeight =  neuron.getOutputWeights()[m_myIndex].deltaWeight;
+            double oldDeltaWeight =  prevLayer->outputWeights[m][n].deltaWeight;
             double newDeltaWeight = 
                 // Individual input, magnified by the gradient and train rate
                 eta
-                * neuron.getOutputVal()
-                *  m_neurons[n].m_gradient
+                * prevLayer->outputVals[m]
+                *  m_gradients[n]
                 // Also add momentum = a fraction of the previous delta weight
                 + alpha
                 * oldDeltaWeight;
-            neuron.updateWeight(m_myIndex, newDeltaWeight);
-            neuron.updateDeltaWeight(m_myIndex, newDeltaWeight);
+            prevLayer->outputWeights[m][n].weight = newDeltaWeight;
+            prevLayer->outputWeights[m][n].deltaWeight = newDeltaWeight;
+            
         }
     }
 }
+
+
 

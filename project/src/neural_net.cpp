@@ -4,10 +4,12 @@
 #include <sstream>
 #include <string>
 #include <cstdlib> // For system() function
+#include <chrono> // For timing
 
-#include "neuron.h"
+#include "connection.h"
 #include "linear_layer.h"
 #include "sigmoid_layer.h"
+#include "tanh_layer.h"
 #include "net.h"
 #include "cost_function.h"
 
@@ -15,6 +17,7 @@ using json = nlohmann::json;
 
 int main(){
 
+    auto start = std::chrono::high_resolution_clock::now();
     std::vector<unsigned> topology = {2, 3, 3, 1};
 
     Net net(topology);
@@ -59,7 +62,7 @@ int main(){
     file.close();
 
     //train neural network
-    for (int i = 0 ; i < 1000; i++){
+    for (int i = 0 ; i < 10000; i++){
         for(unsigned j = 0; j < inputVals.size(); ++j){
             net.feedForward(inputVals[j]);
             net.backProp(targetVals[j]);
@@ -67,23 +70,29 @@ int main(){
     }
 
     // see how well the neural network performs
-    std::vector<double> resultVals;
+    std::vector<std::vector<double>> resultVals(inputVals.size());
     for(unsigned i = 0; i < inputVals.size(); ++i){
         net.feedForward(inputVals[i]);
         net.backProp(targetVals[i]);
-        net.getResults(resultVals);
-        std::cout << "Input: " << inputVals[i][0] << ", " << inputVals[i][1] << " Target: " << targetVals[i][0] <<" Output: " << resultVals[0] << std::endl;
+        net.getResults(resultVals[i]);
+        std::cout << "Input: " << inputVals[i][0] << ", " << inputVals[i][1] << " Target: " << targetVals[i][0] <<" Output: " << resultVals[i][0] << std::endl;
     }
 
 
     // Calculate the Mean Squared Error (MSE)
     CostFunction costFunction;
-    double mse = costFunction.calculate_mse(resultVals, targetVals[0]);
+    double mse = costFunction.calculate_mse(targetVals, resultVals);
     std::cout << "Mean Squared Error: " << mse << std::endl;
 
     // Create a JSON object to hold the network topology and training data
     json data;
     data["topology"] = topology;
+
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+    // Output the duration in milliseconds
+    std::cout << "Execution time: " << duration.count() << " milliseconds" << std::endl;
 
     // Write the JSON data to a file
     std::ofstream jsonFile("data/network_data.json");

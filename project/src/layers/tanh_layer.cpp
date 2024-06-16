@@ -1,50 +1,46 @@
 #include "tanh_layer.h"
-#include <cmath>
 
 void TanhLayer::feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) {
     for (unsigned n = 0; n < size() - 1; ++n) {
         double sum = 0.0;
-        int neuronIndex = m_neurons[n].getMyIndex();
-        for (unsigned m = 0; m < prevLayer->size(); ++m) {
-            sum += prevLayer->m_neurons[m].getOutputVal() * prevLayer->m_neurons[m].getOutputWeights()[neuronIndex].weight;
+        for(unsigned m = 0; m < prevLayer->size(); ++m){
+            sum += prevLayer->outputVals[m] * prevLayer->outputWeights[m][n].weight; 
         }
-        m_neurons[n].outputVal = transferFunction(sum);
+        outputVals[n] = activationFunction(sum);
     }
 }
 
-double TanhLayer::transferFunction(double x) {
-    return tanh(x);
-}
-
-double TanhLayer::transferFunctionDerivative(double x) {
-    return 1 - x * x;
-}
-
 void TanhLayer::calcHiddenGradients(const std::shared_ptr<Layer>& nextLayer) {
-    for (unsigned n = 0; n < size(); ++n) {
-        double dow = m_neurons[n].sumDOW(nextLayer);
-        m_neurons[n].m_gradient = dow * transferFunctionDerivative(m_neurons[n].outputVal);
+    for(unsigned n = 0; n < size(); ++n){
+        double dow = this->sumDOW(nextLayer, n);
+        m_gradients[n] = dow * activationFunctionDerivative(outputVals[n]);
     }
 }
 
 void TanhLayer::calcOutputGradients(const std::vector<double>& targetVals) {
-    for (unsigned n = 0; n < size() - 1; ++n) {
-        double delta = targetVals[n] - m_neurons[n].outputVal;
-        m_neurons[n].m_gradient = delta * transferFunctionDerivative(m_neurons[n].outputVal);
+    for(unsigned n = 0; n < size() - 1; ++n){
+        double delta = targetVals[n] - outputVals[n];
+        m_gradients[n] = delta * activationFunctionDerivative(outputVals[n]);
     }
 }
 
 void TanhLayer::backPropagation(std::shared_ptr<Layer>& prevLayer) {
-    for (unsigned n = 0; n < size() - 1; ++n) {
-        int m_myIndex = m_neurons[n].getMyIndex();
-        for (unsigned m = 0; m < prevLayer->size(); ++m) {
-            Neuron &neuron = prevLayer->m_neurons[m];
-            double oldDeltaWeight = neuron.getOutputWeights()[m_myIndex].deltaWeight;
+    for(unsigned n = 0; n < size() - 1; ++n){
+        for(unsigned m = 0; m < prevLayer->size(); ++m){
+            double oldDeltaWeight =  prevLayer->outputWeights[m][n].deltaWeight;
             double newDeltaWeight = 
-                eta * neuron.getOutputVal() * m_neurons[n].m_gradient + 
-                alpha * oldDeltaWeight;
-            neuron.updateWeight(m_myIndex, newDeltaWeight);
-            neuron.updateDeltaWeight(m_myIndex, newDeltaWeight);
+                eta * prevLayer->outputVals[m] * m_gradients[n] + alpha * oldDeltaWeight;
+            prevLayer->outputWeights[m][n].weight += newDeltaWeight;
+            prevLayer->outputWeights[m][n].deltaWeight = newDeltaWeight;
         }
     }
 }
+
+double TanhLayer::activationFunction(double x) {
+    return tanh(x);
+}
+
+double TanhLayer::activationFunctionDerivative(double x) {
+    return 1.0 - x * x; // tanh derivative
+}
+
