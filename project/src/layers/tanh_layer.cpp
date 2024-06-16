@@ -1,4 +1,5 @@
 #include "tanh_layer.h"
+#include <cmath>
 
 void TanhLayer::feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) {
     for (unsigned n = 0; n < size() - 1; ++n) {
@@ -37,7 +38,7 @@ void TanhLayer::backPropagation(std::shared_ptr<Layer>& prevLayer) {
 }
 
 double TanhLayer::activationFunction(double x) {
-    return std::tanh(x);
+    return tanh(x);
 }
 
 double TanhLayer::activationFunctionDerivative(double x) {
