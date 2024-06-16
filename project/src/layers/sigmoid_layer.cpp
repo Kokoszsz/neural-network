@@ -1,4 +1,5 @@
 #include "sigmoid_layer.h"
+#include <cmath>
 
 void SigmoidLayer::feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) {
     for (unsigned n = 0; n < size() - 1; ++n) {
@@ -37,7 +38,7 @@ void SigmoidLayer::backPropagation(std::shared_ptr<Layer>& prevLayer) {
 }
 
 double SigmoidLayer::activationFunction(double x)  {
-    return 1.0 / (1.0 + exp(-x)); 
+    return 1.0 / (1.0 + std::exp(-x)); 
 }
 
 double SigmoidLayer::activationFunctionDerivative(double x)  {
