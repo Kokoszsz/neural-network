@@ -1,5 +1,4 @@
 #include "sigmoid_layer.h"
-#include <cmath>
 
 void SigmoidLayer::feedForwardLayer(const std::shared_ptr<Layer>& prevLayer) {
     for (unsigned n = 0; n < size() - 1; ++n) {

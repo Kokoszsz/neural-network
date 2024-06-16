@@ -37,7 +37,7 @@ void TanhLayer::backPropagation(std::shared_ptr<Layer>& prevLayer) {
 }
 
 double TanhLayer::activationFunction(double x) {
-    return tanh(x);
+    return std::tanh(x);
 }
 
 double TanhLayer::activationFunctionDerivative(double x) {
