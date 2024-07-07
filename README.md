@@ -52,28 +52,19 @@ This project requires:
    
 project/
 │
-├── include/
-│   └── Header files for various classes and layers.
-├── src/
-│   └── Source files for the implementation of the neural network.
-├── test/
-│   └── Unit tests for the project.
-├── data/
-│   └── JSON representation of the neural network, used in Python visualization scripts.
-├── libraries/
-│   └── Libraries (in the form of header files) used in the project.
-├── py_script/
-│   └── Python scripts used for simple visualization of neural network architecture.
-├── training_data/
-│   └── Data used to train a neural network.
-└── cmake/
-    └── CMake file for updating modules.
+├── include/            # Header files for various classes and layers
+├── src/                # Source files for the implementation of the neural network
+├── test/               # Unit tests for the project
+├── data/               # JSON representation of the neural network, used in Python visualization scripts
+├── libraries/          # Libraries (in the form of header files) used in the project
+├── py_script/          # Python scripts used for simple visualization of neural network architecture
+├── training_data/      # Data used to train a neural network
+└── cmake/              # CMake file for updating modules
 
-sources_used/
-└── Additional materials/tutorials used by the author to help create this project.
+sources_used/           # Additional materials/tutorials used by the author to help create this project
 
-docu/
-└── Documentation files.
+docu/                   # Documentation files
+
 
     
     
