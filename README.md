@@ -49,7 +49,7 @@ This project requires:
 
 
 ### Project Structure
-   
+```bash   
 project/
 │
 ├── include/            # Header files for various classes and layers
@@ -65,7 +65,7 @@ sources_used/           # Additional materials/tutorials used by the author to h
 
 docu/                   # Documentation files
 
-
+```
     
     
 
